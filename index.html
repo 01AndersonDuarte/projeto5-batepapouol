@@ -17,7 +17,14 @@
         <title>Bate-Papo UOL</title>        
     </head>
     <body>
-
+        <div class="telaLogin">       
+            <img src="img/uol.jpg">
+            <input type="text" placeholder="Digite seu nome">
+            <button onclick="inicio()">Entrar</button>
+        </div>
+        <div class="telaLoading escondido">
+            <img src="img/icons8-spinner.gif">
+        </div>
         <div onclick="fecharMenu()" class="overlay escondido"></div>
         <div class="menuSidebar escondido">
             <div class="topo">
@@ -25,7 +32,7 @@
                     para enviar mensagem:</h1>
             </div>
 
-            <div class="opcoes">
+            <div onclick="opcaoUsuario(this)" class="opcoes">
                 <ion-icon name="people"></ion-icon>
                 <h2>Todos</h2>
             </div>
@@ -37,11 +44,11 @@
                 <h1>Escolha a visibilidade:</h1>
             </div>
 
-            <div class="opcoes">
+            <div onclick="opcaoVisibilidade(this)" class="opcoes">
                 <ion-icon name="lock-open"></ion-icon>
                 <h2>Público</h2>
             </div>
-            <div class="opcoes">
+            <div onclick="opcaoVisibilidade(this)" class="opcoes">
                 <ion-icon name="lock-closed"></ion-icon>
                 <h2>Reservadamente</h2>
             </div>
@@ -63,7 +70,7 @@
             <div>
                 <input type="text" placeholder="Escreva aqui...">
             </div>
-            <div>
+            <div onclick="enviarMensagem()">
                 <ion-icon name="paper-plane-outline"></ion-icon>
             </div> 
         </footer>
