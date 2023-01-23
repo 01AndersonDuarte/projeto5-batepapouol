@@ -27,13 +27,17 @@ function listaUsuariosOnline(){
             usuarioAtivos.innerHTML = "";
             for(let i=0; i<resposta.data.length; i++){
                 if(resposta.data[i].name===nome.name){
-                    usuarioAtivos.innerHTML += `<div class="opcoes">
+                    usuarioAtivos.innerHTML += `<div data-test="participant" class="opcoes">
                     <ion-icon name="person-circle"></ion-icon>
-                    <h2>Eu</h2> </div>`;
+                    <h2>Eu</h2>
+                    <div data-test="check" class="check"> <ion-icon name="checkmark-sharp"></ion-icon> </div>
+                    </div>`;
                 }else{
-                    usuarioAtivos.innerHTML += `<div onclick="opcaoUsuario(this)" class="opcoes">
+                    usuarioAtivos.innerHTML += `<div data-test="participant" onclick="opcaoUsuario(this)" class="opcoes">
                     <ion-icon name="person-circle"></ion-icon>
-                    <h2>${resposta.data[i].name}</h2> </div>`;
+                    <h2>${resposta.data[i].name}</h2>
+                    <div data-test="check" class="check"> <ion-icon name="checkmark-sharp"></ion-icon> </div>
+                    </div>`;
                 }
             }
         });
@@ -79,7 +83,7 @@ function inserirAtualizarMensagens(resposta){
     for(let i=0; i<resposta.data.length; i++){
        
         if(resposta.data[i].type==="status"){
-            mainMensagens.innerHTML += `<div class="mensagensStatus">
+            mainMensagens.innerHTML += `<div data-test="message" class="mensagensStatus">
             <span>
             <span class="tempo">(${resposta.data[i].time})</span>
             <span class="nomeUsuario">${resposta.data[i].from}</span>
@@ -159,16 +163,16 @@ function mensagemInput(){
 
     if(tipo!=="message" && para!=="Todos"){
         c.innerHTML = "";
-        c.innerHTML = `<input type="text" placeholder="Escreva aqui...">
-        <p>Enviando para ${para} (Reservadamente) </p>`;
+        c.innerHTML = `<input data-test="input-message" type="text" placeholder="Escreva aqui...">
+        <p data-test="recipient">Enviando para ${para} (Reservadamente) </p>`;
         return;
     }else if(para!="Todos"){
         c.innerHTML = "";
-        c.innerHTML = `<input type="text" placeholder="Escreva aqui...">
-        <p>Enviando para ${para} (Publicamente) </p>`;
+        c.innerHTML = `<input data-test="input-message" type="text" placeholder="Escreva aqui...">
+        <p data-test="recipient">Enviando para ${para} (Publicamente) </p>`;
         return;
     }
-    c.innerHTML = `<input type="text" placeholder="Escreva aqui...">`;
+    c.innerHTML = `<input data-test="input-message" type="text" placeholder="Escreva aqui...">`;
 }
 function opcaoVisibilidade(escolhido){
 

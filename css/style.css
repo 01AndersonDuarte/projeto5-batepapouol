@@ -110,12 +110,21 @@ body{
     padding: 20px;
 }
 .menuSidebar h2{
-    width: 85%;
+    width: 65%;
 
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
 }
+.menuSidebar .check{
+    opacity: 0;
+    color: #32B72F;
+    font-size: 20px;
+}
+.menuSidebar .opcoes.escolhida .check{
+    opacity: 1;
+}
+
 .menuSidebar .opcoes ion-icon{
     font-size: 24px;
 }
@@ -130,7 +139,7 @@ body{
     display: none;
 }
 .escolhida{
-    background-color: green;
+    transform: scale(1.07);
 }
 
 /*<HEADER>*/
@@ -167,6 +176,7 @@ main{
 main div{
     word-break: break-word;
     padding: 10px;
+    margin-bottom: 4px;
 }
 main .mensagensStatus{
     background-color: #DCDCDC;
