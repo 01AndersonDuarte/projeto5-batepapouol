@@ -18,6 +18,11 @@ function inicio(){
     requisicao.then(nomeAceito);
     requisicao.catch(nomeRecusado);
 
+    document.addEventListener('keydown', function (event) {
+        if (event.keyCode !== 13) return;
+        enviarMensagem();
+    });
+
 }
 function listaUsuariosOnline(){
     IntervalUsuariosList = setInterval(()=>{
@@ -41,7 +46,7 @@ function listaUsuariosOnline(){
                 }
             }
         });
-    }, 1000);
+    }, 10000);
 
      /*Este setInterval está executando uma função arrow que verifica a lista de usuários online
     listaUsuarios está recebendo a promise e o then usado para executar essa requisição está com
