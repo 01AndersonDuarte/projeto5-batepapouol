@@ -75,7 +75,6 @@ function nomeAceito(requisicao){
 }
 function nomeRecusado(requisicao){
     alert("Esse nome já está em uso.");
-    inicio();
 }
 function chamarInserirAtualizarMensagens(){
     const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
@@ -148,6 +147,7 @@ function enviarMensagem(){
         setTimeout(()=>{
             document.querySelector("footer input").classList.remove('inputAlerta');
         }, 1000);
+        //window.location.reload(true);
         
     });
 }
@@ -197,9 +197,7 @@ function opcaoVisibilidade(escolhido){
 }
 
 function abrirMenu(){
-    document.querySelector('.menuSidebar').classList.remove('escondido');
-    document.querySelector('.overlay').classList.remove('escondido');
-
+    document.querySelector('.menu').classList.remove('escondido');
     clearInterval(IntervalUsuariosList);
 }
 function fecharMenu(){
@@ -208,8 +206,7 @@ function fecharMenu(){
         return;
     }
 
-    document.querySelector('.menuSidebar').classList.add('escondido');
-    document.querySelector('.overlay').classList.add('escondido');
+    document.querySelector('.menu').classList.add('escondido');
     
     listaUsuariosOnline();
     

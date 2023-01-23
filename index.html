@@ -25,37 +25,39 @@
         <div class="telaLoading escondido">
             <img src="img/icons8-spinner.gif">
         </div>
-        <div onclick="fecharMenu()" class="overlay escondido"></div>
-        <div data-test="overlay" class="menuSidebar escondido">
-            <div class="topo">
-                <h1>Escolha um contato
-                    para enviar mensagem:</h1>
-            </div>
+        <div data-test="overlay" class="menu escondido">
+            <div onclick="fecharMenu()" class="overlay"></div>
+            <div class="menuSidebar">
+                <div class="topo">
+                    <h1>Escolha um contato
+                        para enviar mensagem:</h1>
+                </div>
 
-            <div data-test="all" onclick="opcaoUsuario(this)" class="opcoes">
-                <ion-icon name="people"></ion-icon>
-                <h2>Todos</h2>
-                <div data-test="check" class="check"> <ion-icon name="checkmark-sharp"></ion-icon> </div>
-            </div>
-            <div class="usuariosOnline">
+                <div data-test="all" onclick="opcaoUsuario(this)" class="opcoes">
+                    <ion-icon name="people"></ion-icon>
+                    <h2>Todos</h2>
+                    <div data-test="check" class="check"> <ion-icon name="checkmark-sharp"></ion-icon> </div>
+                </div>
+                <div class="usuariosOnline">
+                    
+                </div>
+        
+                <div class="meio">
+                    <h1>Escolha a visibilidade:</h1>
+                </div>
+
+                <div data-test="public" onclick="opcaoVisibilidade(this)" class="opcoes">
+                    <ion-icon name="lock-open"></ion-icon>
+                    <h2>Público</h2>
+                    <div data-test="check" class="check"> <ion-icon name="checkmark-sharp"></ion-icon> </div>
+                </div>
+                <div data-test="public" onclick="opcaoVisibilidade(this)" class="opcoes">
+                    <ion-icon name="lock-closed"></ion-icon>
+                    <h2>Reservadamente</h2>
+                    <div data-test="check" class="check"> <ion-icon name="checkmark-sharp"></ion-icon> </div>
+                </div>
                 
             </div>
-    
-            <div class="meio">
-                <h1>Escolha a visibilidade:</h1>
-            </div>
-
-            <div data-test="public" onclick="opcaoVisibilidade(this)" class="opcoes">
-                <ion-icon name="lock-open"></ion-icon>
-                <h2>Público</h2>
-                <div data-test="check" class="check"> <ion-icon name="checkmark-sharp"></ion-icon> </div>
-            </div>
-            <div data-test="public" onclick="opcaoVisibilidade(this)" class="opcoes">
-                <ion-icon name="lock-closed"></ion-icon>
-                <h2>Reservadamente</h2>
-                <div data-test="check" class="check"> <ion-icon name="checkmark-sharp"></ion-icon> </div>
-            </div>
-            
         </div>
         
         <header>

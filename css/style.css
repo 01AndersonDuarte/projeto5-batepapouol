@@ -64,6 +64,13 @@ body{
 }
 
 /*Menu lateral*/
+.menu{
+    background-color: red;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+}
 .overlay{
     width: 31%;
     height: 100%;
@@ -260,13 +267,3 @@ footer ion-icon{
     font-size: 26px;
 }
 /*</FOOTER>*/
-
-
-/*@media (max-width: 375px) {
-    main div {
-        width: 375px;
-        flex-shrink: 0;
-        overflow: hidden;
-    }
-   
-}*/
