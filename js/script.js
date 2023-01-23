@@ -137,16 +137,21 @@ function enviarMensagem(){
     objetoMensagem = [];
     
     objetoMensagem.push(formatarMensagem(texto));
+    if(formatarMensagem(texto).text===""){
+        document.querySelector("footer input").classList.add('inputAlerta');
+        setTimeout(()=>{
+            document.querySelector("footer input").classList.remove('inputAlerta');
+        }, 1000);
+        return;
+    }
     
     const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', objetoMensagem[0]);
+    
     promessa.then((resposta)=>{
         chamarInserirAtualizarMensagens();
     });
     promessa.catch((resposta)=>{
-        /*document.querySelector("footer input").classList.add('inputAlerta');
-        setTimeout(()=>{
-            document.querySelector("footer input").classList.remove('inputAlerta');
-        }, 1000);*/
+        
         window.location.reload(true);
         
     });
