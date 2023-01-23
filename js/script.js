@@ -91,7 +91,7 @@ function inserirAtualizarMensagens(resposta){
             </span>
             </div>`;
         }else if(resposta.data[i].type==="message"){
-            mainMensagens.innerHTML += `<div class="mensagensNaoPrivadas">
+            mainMensagens.innerHTML += `<div data-test="message" class="mensagensNaoPrivadas">
             <span>
             <span class="tempo">(${resposta.data[i].time})</span>
             <span class="nomeUsuario">${resposta.data[i].from}</span>
@@ -100,8 +100,9 @@ function inserirAtualizarMensagens(resposta){
             <span class="mensagemTexto">${resposta.data[i].text}</span>
             </span>
             </div>`;
-        }else if(resposta.data[i].type==="private_message"){
-            mainMensagens.innerHTML += `<div class="mensagensPrivadas">
+        }else if(resposta.data[i].type==="private_message" && 
+        (resposta.data[i].to===nome.name||resposta.data[i].from===nome.name)){
+            mainMensagens.innerHTML += `<div data-test="message" class="mensagensPrivadas">
             <span>
             <span class="tempo">(${resposta.data[i].time})</span>
             <span class="nomeUsuario">${resposta.data[i].from}</span>
