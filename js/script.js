@@ -143,11 +143,11 @@ function enviarMensagem(){
         chamarInserirAtualizarMensagens();
     });
     promessa.catch((resposta)=>{
-        document.querySelector("footer input").classList.add('inputAlerta');
+        /*document.querySelector("footer input").classList.add('inputAlerta');
         setTimeout(()=>{
             document.querySelector("footer input").classList.remove('inputAlerta');
-        }, 1000);
-        //window.location.reload(true);
+        }, 1000);*/
+        window.location.reload(true);
         
     });
 }
